@@ -17,5 +17,6 @@
     pkgs.htop
     pkgs.doctl
     pkgs.nodejs-16_x
+    pkgs.tmux
   ];
 }
