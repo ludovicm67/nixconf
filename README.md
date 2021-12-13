@@ -19,3 +19,10 @@ echo "extra-platforms = aarch64-darwin x86_64-darwin" | sudo tee -a /etc/nix/nix
 nix flake update
 home-manager switch
 ```
+
+# Garbage collect
+
+```sh
+nix-collect-garbage # delete unreacheables derivations
+nix-collect-garbage -d # delete also all old generations
+```
