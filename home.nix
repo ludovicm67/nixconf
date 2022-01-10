@@ -30,5 +30,6 @@ in {
     pkgs.sops
     pkgs.kustomize
     pkgs.fluxcd
+    pkgs.imagemagick6
   ];
 }
