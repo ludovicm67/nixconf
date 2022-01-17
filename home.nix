@@ -31,5 +31,6 @@ in {
     pkgs.kustomize
     pkgs.fluxcd
     pkgs.imagemagick6
+    pkgs.postgresql
   ];
 }
