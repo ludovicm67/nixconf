@@ -32,5 +32,6 @@ in {
     pkgs.fluxcd
     pkgs.imagemagick6
     pkgs.postgresql
+    pkgs.kubernetes-helm
   ];
 }
