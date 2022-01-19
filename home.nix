@@ -33,5 +33,6 @@ in {
     pkgs.imagemagick6
     pkgs.postgresql
     pkgs.kubernetes-helm
+    pkgs.yarn
   ];
 }
