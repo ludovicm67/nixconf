@@ -34,5 +34,6 @@ in {
     pkgs.postgresql
     pkgs.kubernetes-helm
     pkgs.yarn
+    pkgs.pwgen
   ];
 }
