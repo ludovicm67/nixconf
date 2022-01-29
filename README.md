@@ -27,7 +27,7 @@ nix-collect-garbage # delete unreacheables derivations
 nix-collect-garbage -d # delete also all old generations
 ```
 
-# Troubleshooter
+# Troubleshooting
 
 ## The program 'nix' is currently not installed
 
