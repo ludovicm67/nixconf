@@ -26,3 +26,19 @@ home-manager switch
 nix-collect-garbage # delete unreacheables derivations
 nix-collect-garbage -d # delete also all old generations
 ```
+
+# Troubleshooter
+
+## The program 'nix' is currently not installed
+
+This error can occur after upgrading the system.
+
+Make sure the following lines are in the `/etc/zshrc` file:
+
+```sh
+# Nix
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
+# End Nix
+```
