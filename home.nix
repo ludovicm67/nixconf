@@ -35,5 +35,6 @@ in {
     pkgs.kubernetes-helm
     pkgs.yarn
     pkgs.pwgen
+    pkgs.tokei
   ];
 }
