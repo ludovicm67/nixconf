@@ -37,5 +37,6 @@ in {
     pkgs.pwgen
     pkgs.tokei
     pkgs.pv
+    pkgs.jq
   ];
 }
