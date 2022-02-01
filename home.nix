@@ -36,5 +36,6 @@ in {
     pkgs.yarn
     pkgs.pwgen
     pkgs.tokei
+    pkgs.pv
   ];
 }
