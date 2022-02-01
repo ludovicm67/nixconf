@@ -13,9 +13,14 @@
       url = "github:chriskempson/base16-shell";
       flake = false;
     };
+
+    fenix = {
+      url = "github:nix-community/fenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, base16-shell, self }@inputs: {
+  outputs = { nixpkgs, home-manager, base16-shell, fenix, self }@inputs: {
     homeConfigurations = {
       ludovic = home-manager.lib.homeManagerConfiguration {
         system = "aarch64-darwin";

@@ -1,6 +1,6 @@
 { inputs, pkgs, ... }:
 
-let inherit (inputs) nixpkgs;
+let inherit (inputs) nixpkgs fenix;
 
 in {
   imports = [ ./programs ];
@@ -17,6 +17,7 @@ in {
         inherit (x86Pkgs) nix-index;
       } else
         { })
+    fenix.overlay
   ];
 
   home.packages = [
@@ -38,5 +39,13 @@ in {
     pkgs.tokei
     pkgs.pv
     pkgs.jq
+    (pkgs.fenix.complete.withComponents [
+      "cargo"
+      "clippy"
+      "rust-src"
+      "rustc"
+      "rustfmt"
+    ])
+    pkgs.rust-analyzer-nightly
   ];
 }
