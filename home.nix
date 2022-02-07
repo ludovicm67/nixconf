@@ -47,5 +47,6 @@ in {
       "rustfmt"
     ])
     pkgs.rust-analyzer-nightly
+    pkgs.minio-client
   ];
 }
