@@ -48,5 +48,6 @@ in {
     ])
     pkgs.rust-analyzer-nightly
     pkgs.minio-client
+    pkgs.wrk
   ];
 }
