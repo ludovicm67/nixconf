@@ -50,5 +50,6 @@ in {
     pkgs.minio-client
     pkgs.wrk
     pkgs.maven
+    pkgs.jdk17
   ];
 }
