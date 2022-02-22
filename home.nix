@@ -51,5 +51,6 @@ in {
     pkgs.wrk
     pkgs.maven
     pkgs.jdk17
+    pkgs.cmake
   ];
 }
