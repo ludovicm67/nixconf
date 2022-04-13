@@ -52,5 +52,7 @@ in {
     pkgs.maven
     pkgs.jdk17
     pkgs.cmake
+    pkgs.jsonnet-bundler
+    pkgs.jsonnet
   ];
 }
