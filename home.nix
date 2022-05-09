@@ -54,5 +54,6 @@ in {
     pkgs.cmake
     pkgs.jsonnet-bundler
     pkgs.jsonnet
+    pkgs.nodePackages.ts-node
   ];
 }
