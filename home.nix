@@ -55,6 +55,7 @@ in {
     pkgs.jsonnet-bundler
     pkgs.jsonnet
     pkgs.nodePackages.ts-node
-    pkgs.tree.out
+    pkgs.tree
+    pkgs.python310
   ];
 }
