@@ -57,5 +57,6 @@ in {
     pkgs.nodePackages.ts-node
     pkgs.tree
     pkgs.python310
+    pkgs.dsq
   ];
 }
