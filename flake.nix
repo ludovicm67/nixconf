@@ -20,18 +20,30 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, base16-shell, fenix, self }@inputs: {
-    homeConfigurations = {
-      ludovic = home-manager.lib.homeManagerConfiguration {
-        system = "aarch64-darwin";
-        homeDirectory = "/Users/ludovic";
-        username = "ludovic";
-        configuration = { imports = [ ./home.nix ]; };
+  outputs = { nixpkgs, home-manager, base16-shell, fenix, self }@inputs:
+    let
+      system = "aarch64-darwin";
+      pkgs = nixpkgs.legacyPackages.${system};
+    in {
+      homeConfigurations = {
+        ludovic = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
 
-        extraSpecialArgs = { inherit inputs; };
+          modules = [
+            ./home.nix
+            {
+              home = {
+                homeDirectory = "/Users/ludovic";
+                username = "ludovic";
+                stateVersion = "22.11";
+              };
+            }
+          ];
+
+          extraSpecialArgs = { inherit inputs; };
+        };
       };
-    };
 
-    apps = home-manager.apps;
-  };
+      apps = home-manager.apps;
+    };
 }
