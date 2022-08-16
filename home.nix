@@ -58,5 +58,6 @@ in {
     pkgs.tree
     pkgs.python310
     pkgs.dsq
+    pkgs.terraform
   ];
 }
