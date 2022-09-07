@@ -59,5 +59,6 @@ in {
     pkgs.python310
     pkgs.dsq
     pkgs.terraform
+    pkgs.mongodb-tools
   ];
 }
