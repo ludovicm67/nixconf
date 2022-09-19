@@ -60,5 +60,6 @@ in {
     pkgs.dsq
     pkgs.terraform
     pkgs.mongodb-tools
+    pkgs.redis
   ];
 }
