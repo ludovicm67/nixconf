@@ -61,5 +61,6 @@ in {
     pkgs.terraform
     pkgs.mongodb-tools
     pkgs.redis
+    pkgs.dive
   ];
 }
