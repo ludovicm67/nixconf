@@ -62,5 +62,6 @@ in {
     pkgs.mongodb-tools
     pkgs.redis
     pkgs.dive
+    pkgs.poetry
   ];
 }
