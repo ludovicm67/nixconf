@@ -24,7 +24,7 @@ in {
     pkgs.nixfmt
     pkgs.htop
     pkgs.doctl
-    pkgs.nodejs-16_x
+    pkgs.nodejs-18_x
     pkgs.tmux
     pkgs.kubectl
     pkgs.pandoc
