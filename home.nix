@@ -17,7 +17,7 @@ in {
         inherit (x86Pkgs) nix-index;
       } else
         { })
-    fenix.overlay
+    fenix.overlays.default
   ];
 
   home.packages = [
