@@ -16,6 +16,9 @@ in {
       theme = "agnoster";
       plugins = [ "git" "sudo" "tmux" ];
     };
+    initExtra = ''
+      ${builtins.readFile ./zsh-init.zsh}
+    '';
     plugins = [{
       name = "base16-shell";
       src = base16-shell;

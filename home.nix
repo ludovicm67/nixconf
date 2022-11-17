@@ -63,5 +63,6 @@ in {
     pkgs.redis
     pkgs.dive
     pkgs.poetry
+    pkgs.krew
   ];
 }
