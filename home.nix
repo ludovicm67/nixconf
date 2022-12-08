@@ -64,5 +64,6 @@ in {
     pkgs.dive
     pkgs.poetry
     pkgs.krew
+    pkgs.awscli2
   ];
 }
