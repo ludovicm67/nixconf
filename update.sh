@@ -1,3 +1,3 @@
 #!/bin/sh
 
-home-manager switch --flake .
+darwin-rebuild switch --flake .

@@ -3,7 +3,32 @@
 let inherit (inputs) nixpkgs fenix;
 
 in {
-  imports = [ ./programs ];
+  # Auto upgrade nix package and the daemon service.
+  services.nix-daemon.enable = true;
+
+   nix = {
+    package = pkgs.nix;
+    settings = {
+      experimental-features = [ "nix-command" "flakes" ];
+      keep-outputs = true;
+      keep-derivations = true;
+      sandbox = false;
+      trusted-users = [ "@wheel" ];
+      extra-platforms = [ "aarch64-darwin" "x86_64-darwin" ];
+    };
+  };
+
+  programs.zsh.enable = true;
+
+  users.users.ludovic = { home = "/Users/ludovic"; };
+
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    sharedModules = [{ home.stateVersion = "22.11"; }];
+
+    users.ludovic = { ... }: { imports = [ ./programs ]; };
+  };
 
   nixpkgs.overlays = [
     (final: prev:
@@ -20,7 +45,7 @@ in {
     fenix.overlays.default
   ];
 
-  home.packages = [
+  environment.systemPackages = [
     pkgs.nixfmt
     pkgs.htop
     pkgs.doctl

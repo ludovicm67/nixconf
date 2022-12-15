@@ -9,9 +9,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    base16-shell = {
-      url = "github:chriskempson/base16-shell";
-      flake = false;
+    darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     fenix = {
@@ -20,30 +20,11 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, base16-shell, fenix, self }@inputs:
-    let
+  outputs = { nixpkgs, darwin, home-manager, fenix, self }@inputs: {
+    darwinConfigurations."MacBook-Pro-de-Ludovic" = darwin.lib.darwinSystem {
+      inherit inputs;
       system = "aarch64-darwin";
-      pkgs = nixpkgs.legacyPackages.${system};
-    in {
-      homeConfigurations = {
-        ludovic = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-
-          modules = [
-            ./home.nix
-            {
-              home = {
-                homeDirectory = "/Users/ludovic";
-                username = "ludovic";
-                stateVersion = "22.11";
-              };
-            }
-          ];
-
-          extraSpecialArgs = { inherit inputs; };
-        };
-      };
-
-      apps = home-manager.apps;
+      modules = [ home-manager.darwinModules.home-manager ./configuration.nix ];
     };
+  };
 }
