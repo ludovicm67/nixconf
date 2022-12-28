@@ -6,7 +6,7 @@ in {
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
 
-   nix = {
+  nix = {
     package = pkgs.nix;
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
@@ -90,5 +90,6 @@ in {
     pkgs.poetry
     pkgs.krew
     pkgs.awscli2
+    pkgs.aws-iam-authenticator
   ];
 }
