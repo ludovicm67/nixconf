@@ -91,5 +91,6 @@ in {
     pkgs.krew
     pkgs.awscli2
     pkgs.aws-iam-authenticator
+    pkgs.kubeseal
   ];
 }
