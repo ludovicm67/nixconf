@@ -56,7 +56,8 @@ in {
     pkgs.sops
     pkgs.kustomize
     pkgs.fluxcd
-    pkgs.imagemagick6
+    # pkgs.imagemagick6
+    pkgs.imagemagick
     pkgs.postgresql
     pkgs.kubernetes-helm
     pkgs.yarn
