@@ -93,5 +93,7 @@ in {
     pkgs.awscli2
     pkgs.aws-iam-authenticator
     pkgs.kubeseal
+    pkgs.php
+    pkgs.php82Packages.composer
   ];
 }
