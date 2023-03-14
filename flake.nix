@@ -21,7 +21,7 @@
   };
 
   outputs = { nixpkgs, darwin, home-manager, fenix, self }@inputs: {
-    darwinConfigurations."MacBook-Pro-de-Ludovic" = darwin.lib.darwinSystem {
+    darwinConfigurations."mbp-de-ludovic" = darwin.lib.darwinSystem {
       inherit inputs;
       system = "aarch64-darwin";
       modules = [ home-manager.darwinModules.home-manager ./configuration.nix ];
