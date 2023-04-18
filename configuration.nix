@@ -96,5 +96,6 @@ in {
     pkgs.php82
     pkgs.php82Packages.composer
     pkgs.cmctl
+    pkgs.trivy
   ];
 }
