@@ -98,5 +98,6 @@ in {
     pkgs.cmctl
     pkgs.trivy
     pkgs.miller
+    pkgs.wget
   ];
 }
