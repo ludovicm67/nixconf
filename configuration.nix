@@ -101,5 +101,6 @@ in {
     pkgs.wget
     pkgs.pkg-config
     pkgs.bats
+    pkgs.hurl
   ];
 }
