@@ -99,5 +99,6 @@ in {
     pkgs.trivy
     pkgs.miller
     pkgs.wget
+    pkgs.pkg-config
   ];
 }
