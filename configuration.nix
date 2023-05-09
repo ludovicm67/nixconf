@@ -100,5 +100,6 @@ in {
     pkgs.miller
     pkgs.wget
     pkgs.pkg-config
+    pkgs.bats
   ];
 }
