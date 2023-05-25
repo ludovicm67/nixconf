@@ -102,5 +102,6 @@ in {
     pkgs.pkg-config
     pkgs.bats
     pkgs.hurl
+    pkgs.graphicsmagick
   ];
 }
