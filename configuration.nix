@@ -103,5 +103,6 @@ in {
     pkgs.bats
     pkgs.hurl
     pkgs.graphicsmagick
+    pkgs.gradle
   ];
 }
