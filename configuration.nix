@@ -104,5 +104,7 @@ in {
     pkgs.hurl
     pkgs.graphicsmagick
     pkgs.gradle
+    pkgs.hey
+    pkgs.go
   ];
 }
