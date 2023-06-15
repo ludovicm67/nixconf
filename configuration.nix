@@ -106,5 +106,6 @@ in {
     pkgs.gradle
     pkgs.hey
     pkgs.go
+    pkgs.ansible
   ];
 }
