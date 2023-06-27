@@ -107,5 +107,6 @@ in {
     pkgs.hey
     pkgs.go
     pkgs.ansible
+    pkgs.git-filter-repo
   ];
 }
