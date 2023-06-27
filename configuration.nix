@@ -79,7 +79,7 @@ in {
     pkgs.jdk17
     pkgs.cmake
     pkgs.jsonnet-bundler
-    pkgs.jsonnet
+    pkgs.go-jsonnet
     pkgs.nodePackages.ts-node
     pkgs.tree
     pkgs.python310
