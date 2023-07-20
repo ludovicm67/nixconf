@@ -108,5 +108,7 @@ in {
     pkgs.go
     pkgs.ansible
     pkgs.git-filter-repo
+    pkgs.mariadb-client
+    pkgs.cachix
   ];
 }
