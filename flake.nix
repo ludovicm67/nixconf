@@ -26,5 +26,11 @@
       system = "aarch64-darwin";
       modules = [ home-manager.darwinModules.home-manager ./configuration.nix ];
     };
+
+    darwinConfigurations."MacBook-Pro-de-Ludovic" = darwin.lib.darwinSystem {
+      inherit inputs;
+      system = "aarch64-darwin";
+      modules = [ home-manager.darwinModules.home-manager ./configuration.nix ];
+    };
   };
 }
