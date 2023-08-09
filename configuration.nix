@@ -25,7 +25,7 @@ in {
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    sharedModules = [{ home.stateVersion = "22.11"; }];
+    sharedModules = [{ home.stateVersion = "23.05"; }];
 
     users.ludovic = { ... }: { imports = [ ./programs ]; };
   };
