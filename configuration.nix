@@ -110,5 +110,6 @@ in {
     pkgs.git-filter-repo
     pkgs.mariadb-client
     pkgs.cachix
+    pkgs.helm-docs
   ];
 }
