@@ -49,6 +49,7 @@ in {
     pkgs.nixfmt
     pkgs.htop
     pkgs.doctl
+    # pkgs.nodejs_20
     pkgs.nodejs-18_x
     pkgs.tmux
     pkgs.kubectl
@@ -100,7 +101,7 @@ in {
     pkgs.miller
     pkgs.wget
     pkgs.pkg-config
-    pkgs.bats
+    # pkgs.bats
     pkgs.hurl
     pkgs.graphicsmagick
     pkgs.gradle
