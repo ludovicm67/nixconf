@@ -112,5 +112,6 @@ in {
     pkgs.mariadb-client
     pkgs.cachix
     pkgs.helm-docs
+    pkgs.k9s
   ];
 }
