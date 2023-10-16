@@ -50,8 +50,7 @@ in {
     pkgs.nixfmt
     pkgs.htop
     pkgs.doctl
-    # pkgs.nodejs_20
-    pkgs.nodejs-18_x
+    pkgs.nodejs_20
     pkgs.tmux
     pkgs.kubectl
     pkgs.pandoc
