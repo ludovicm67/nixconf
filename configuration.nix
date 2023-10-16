@@ -83,7 +83,9 @@ in {
     pkgs.go-jsonnet
     pkgs.nodePackages.ts-node
     pkgs.tree
-    pkgs.python310
+    (pkgs.python310.withPackages (ps: with ps; [ pip numpy toolz ]))
+    pkgs.gst_all_1.gstreamer
+    pkgs.ffmpeg_4
     pkgs.dsq
     pkgs.terraform
     pkgs.mongodb-tools
