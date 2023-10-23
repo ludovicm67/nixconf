@@ -115,5 +115,6 @@ in {
     pkgs.cachix
     pkgs.helm-docs
     pkgs.k9s
+    pkgs.mkvtoolnix-cli
   ];
 }
