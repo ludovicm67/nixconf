@@ -59,7 +59,7 @@ in {
     pkgs.fluxcd
     # pkgs.imagemagick6
     pkgs.imagemagick
-    pkgs.postgresql
+    pkgs.postgresql_15
     pkgs.kubernetes-helm
     pkgs.yarn
     pkgs.pwgen
