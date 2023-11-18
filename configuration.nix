@@ -109,6 +109,7 @@ in {
     pkgs.gradle
     pkgs.hey
     pkgs.go
+    pkgs.mage
     pkgs.ansible
     pkgs.git-filter-repo
     pkgs.mariadb-client
