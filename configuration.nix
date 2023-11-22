@@ -1,6 +1,8 @@
 { inputs, pkgs, ... }:
 
-let inherit (inputs) nixpkgs fenix;
+let
+  inherit (inputs) nixpkgs nixpkgs-stable fenix;
+  stable-pkgs = (import nixpkgs-stable { system = pkgs.system; }).pkgs;
 
 in {
   nixpkgs.config.allowUnfree = true;
@@ -63,7 +65,6 @@ in {
     pkgs.kubernetes-helm
     pkgs.yarn
     pkgs.pwgen
-    pkgs.tokei
     pkgs.pv
     pkgs.jq
     (pkgs.fenix.complete.withComponents [
@@ -93,7 +94,6 @@ in {
     pkgs.dive
     pkgs.poetry
     pkgs.krew
-    pkgs.awscli2
     pkgs.aws-iam-authenticator
     pkgs.kubeseal
     pkgs.php82
@@ -117,5 +117,8 @@ in {
     pkgs.helm-docs
     pkgs.k9s
     pkgs.mkvtoolnix-cli
+
+    stable-pkgs.awscli2
+    stable-pkgs.tokei
   ];
 }

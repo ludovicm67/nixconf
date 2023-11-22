@@ -1,4 +1,4 @@
 #!/bin/sh
 
 nix flake update
-darwin-rebuild switch --flake .
+darwin-rebuild switch --show-trace --flake .

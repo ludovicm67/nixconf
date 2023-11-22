@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.05";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -20,17 +21,20 @@
     };
   };
 
-  outputs = { nixpkgs, darwin, home-manager, fenix, self }@inputs: {
-    darwinConfigurations."mbp-de-ludovic" = darwin.lib.darwinSystem {
-      inherit inputs;
-      system = "aarch64-darwin";
-      modules = [ home-manager.darwinModules.home-manager ./configuration.nix ];
-    };
+  outputs =
+    { nixpkgs, nixpkgs-stable, darwin, home-manager, fenix, self }@inputs: {
+      darwinConfigurations."mbp-de-ludovic" = darwin.lib.darwinSystem {
+        inherit inputs;
+        system = "aarch64-darwin";
+        modules =
+          [ home-manager.darwinModules.home-manager ./configuration.nix ];
+      };
 
-    darwinConfigurations."MacBook-Pro-de-Ludovic" = darwin.lib.darwinSystem {
-      inherit inputs;
-      system = "aarch64-darwin";
-      modules = [ home-manager.darwinModules.home-manager ./configuration.nix ];
+      darwinConfigurations."MacBook-Pro-de-Ludovic" = darwin.lib.darwinSystem {
+        inherit inputs;
+        system = "aarch64-darwin";
+        modules =
+          [ home-manager.darwinModules.home-manager ./configuration.nix ];
+      };
     };
-  };
 }
