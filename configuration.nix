@@ -2,7 +2,8 @@
 
 let
   inherit (inputs) nixpkgs nixpkgs-stable fenix;
-  stable-pkgs = (import nixpkgs-stable { system = pkgs.system; }).pkgs;
+  inherit (pkgs) system;
+  stable-pkgs = (import nixpkgs-stable { inherit system; }).pkgs;
 
 in {
   nixpkgs.config.allowUnfree = true;
