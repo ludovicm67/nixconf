@@ -118,6 +118,7 @@ in {
     pkgs.helm-docs
     pkgs.k9s
     pkgs.mkvtoolnix-cli
+    pkgs.protobuf
 
     stable-pkgs.awscli2
     stable-pkgs.tokei
