@@ -119,6 +119,7 @@ in {
     pkgs.k9s
     pkgs.mkvtoolnix-cli
     pkgs.protobuf
+    pkgs.coreutils
 
     stable-pkgs.awscli2
     stable-pkgs.tokei
