@@ -120,6 +120,7 @@ in {
     pkgs.mkvtoolnix-cli
     pkgs.protobuf
     pkgs.coreutils
+    pkgs.dotnet-sdk_7
 
     stable-pkgs.awscli2
     stable-pkgs.tokei
