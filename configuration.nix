@@ -93,7 +93,6 @@ in {
     pkgs.mongodb-tools
     pkgs.redis
     pkgs.dive
-    pkgs.poetry
     pkgs.krew
     pkgs.aws-iam-authenticator
     pkgs.kubeseal
@@ -124,5 +123,6 @@ in {
 
     stable-pkgs.awscli2
     stable-pkgs.tokei
+    stable-pkgs.poetry
   ];
 }
