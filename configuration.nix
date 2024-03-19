@@ -68,14 +68,14 @@ in {
     pkgs.pwgen
     pkgs.pv
     pkgs.jq
-    (pkgs.fenix.complete.withComponents [
-      "cargo"
-      "clippy"
-      "rust-src"
-      "rustc"
-      "rustfmt"
-    ])
-    pkgs.rust-analyzer-nightly
+    # (pkgs.fenix.complete.withComponents [
+    #   "cargo"
+    #   "clippy"
+    #   "rust-src"
+    #   "rustc"
+    #   "rustfmt"
+    # ])
+    # pkgs.rust-analyzer-nightly
     pkgs.minio-client
     pkgs.wrk
     pkgs.maven
@@ -89,7 +89,7 @@ in {
     pkgs.gst_all_1.gstreamer
     pkgs.ffmpeg_4
     pkgs.dsq
-    pkgs.terraform
+
     pkgs.mongodb-tools
     pkgs.redis
     pkgs.dive
@@ -112,7 +112,7 @@ in {
     pkgs.mage
     pkgs.ansible
     pkgs.git-filter-repo
-    pkgs.mariadb-client
+    # pkgs.mariadb-client
     pkgs.cachix
     pkgs.helm-docs
     pkgs.k9s
@@ -120,9 +120,11 @@ in {
     pkgs.protobuf
     pkgs.coreutils
     pkgs.dotnet-sdk_7
+    pkgs.k6
 
     stable-pkgs.awscli2
     stable-pkgs.tokei
     stable-pkgs.poetry
+    stable-pkgs.terraform
   ];
 }
