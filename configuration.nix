@@ -121,6 +121,7 @@ in {
     pkgs.coreutils
     pkgs.dotnet-sdk_7
     pkgs.k6
+    pkgs.regclient
 
     stable-pkgs.awscli2
     stable-pkgs.tokei
