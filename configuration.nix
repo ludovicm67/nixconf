@@ -104,7 +104,6 @@ in {
     pkgs.wget
     pkgs.pkg-config
     # pkgs.bats
-    pkgs.hurl
     pkgs.graphicsmagick
     pkgs.gradle
     pkgs.hey
@@ -127,5 +126,6 @@ in {
     stable-pkgs.tokei
     stable-pkgs.poetry
     stable-pkgs.terraform
+    stable-pkgs.hurl
   ];
 }
