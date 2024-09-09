@@ -3,7 +3,10 @@
 let
   inherit (inputs) nixpkgs nixpkgs-stable fenix;
   inherit (pkgs) system;
-  stable-pkgs = (import nixpkgs-stable { inherit system; }).pkgs;
+  stable-pkgs = (import nixpkgs-stable {
+    inherit system;
+    config = { allowUnfree = true; };
+  }).pkgs;
 
 in {
   nixpkgs.config.allowUnfree = true;
@@ -122,8 +125,8 @@ in {
     pkgs.k6
     pkgs.regclient
     pkgs.poetry
-    pkgs.terraform
 
+    stable-pkgs.terraform
     stable-pkgs.awscli2
     stable-pkgs.tokei
     stable-pkgs.hurl
