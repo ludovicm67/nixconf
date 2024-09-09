@@ -29,7 +29,7 @@ in {
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    sharedModules = [{ home.stateVersion = "23.05"; }];
+    sharedModules = [{ home.stateVersion = "24.05"; }];
 
     users.ludovic = { ... }: { imports = [ ./programs ]; };
   };
@@ -122,10 +122,10 @@ in {
     pkgs.k6
     pkgs.regclient
     pkgs.poetry
+    pkgs.terraform
 
     stable-pkgs.awscli2
     stable-pkgs.tokei
-    stable-pkgs.terraform
     stable-pkgs.hurl
   ];
 }
