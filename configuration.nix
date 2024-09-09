@@ -121,10 +121,10 @@ in {
     pkgs.dotnet-sdk_7
     pkgs.k6
     pkgs.regclient
+    pkgs.poetry
 
     stable-pkgs.awscli2
     stable-pkgs.tokei
-    stable-pkgs.poetry
     stable-pkgs.terraform
     stable-pkgs.hurl
   ];
