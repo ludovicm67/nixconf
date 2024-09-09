@@ -56,7 +56,7 @@ in {
     pkgs.nixfmt
     pkgs.htop
     pkgs.doctl
-    pkgs.nodejs_20
+    pkgs.nodejs_22
     pkgs.tmux
     pkgs.kubectl
     pkgs.pandoc
