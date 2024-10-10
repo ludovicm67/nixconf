@@ -9,6 +9,7 @@ let
   }).pkgs;
 
 in {
+  system.stateVersion = 5;
   nixpkgs.config.allowUnfree = true;
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
