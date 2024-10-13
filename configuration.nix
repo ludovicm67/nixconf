@@ -29,6 +29,7 @@ in {
   programs.zsh.enable = true;
 
   users.users.ludovic = { home = "/Users/ludovic"; };
+  users.users.ludovic.shell = pkgs.zsh;
 
   home-manager = {
     useGlobalPkgs = true;

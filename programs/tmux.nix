@@ -10,6 +10,8 @@
     keyMode = "vi";
     extraConfig = ''
       set -g mouse on
+      set -g default-command "/bin/zsh"
+
       bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'pbcopy'
       bind -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel 'pbcopy'
 
