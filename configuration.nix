@@ -123,7 +123,6 @@ in {
     pkgs.mkvtoolnix-cli
     pkgs.protobuf
     pkgs.coreutils
-    pkgs.dotnet-sdk_7
     pkgs.k6
     pkgs.regclient
     pkgs.poetry
