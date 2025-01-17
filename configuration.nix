@@ -127,6 +127,8 @@ in {
     pkgs.regclient
     pkgs.poetry
 
+    pkgs.pnpm
+
     stable-pkgs.terraform
     stable-pkgs.awscli2
     stable-pkgs.tokei
