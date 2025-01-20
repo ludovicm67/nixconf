@@ -73,14 +73,14 @@ in {
     pkgs.pwgen
     pkgs.pv
     pkgs.jq
-    # (pkgs.fenix.complete.withComponents [
-    #   "cargo"
-    #   "clippy"
-    #   "rust-src"
-    #   "rustc"
-    #   "rustfmt"
-    # ])
-    # pkgs.rust-analyzer-nightly
+    (pkgs.fenix.complete.withComponents [
+      "cargo"
+      "clippy"
+      "rust-src"
+      "rustc"
+      "rustfmt"
+    ])
+    pkgs.rust-analyzer-nightly
     pkgs.minio-client
     pkgs.wrk
     pkgs.maven
