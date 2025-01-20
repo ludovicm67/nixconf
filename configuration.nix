@@ -128,6 +128,7 @@ in {
     pkgs.poetry
 
     pkgs.pnpm
+    pkgs.git-lfs
 
     stable-pkgs.terraform
     stable-pkgs.awscli2
