@@ -11,7 +11,7 @@
       rebase.autoStash = true;
     };
     signing = {
-      gpgPath = "/usr/local/bin/gpg";
+      signer = "/usr/local/bin/gpg";
       key = "6DE289168B2B031A";
       signByDefault = true;
     };

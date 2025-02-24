@@ -10,9 +10,10 @@ let
 
 in {
   system.stateVersion = 5;
+  ids.gids.nixbld = 30000;
   nixpkgs.config.allowUnfree = true;
   # Auto upgrade nix package and the daemon service.
-  services.nix-daemon.enable = true;
+  # services.nix-daemon.enable = true;
 
   nix = {
     package = pkgs.nix;
@@ -125,7 +126,8 @@ in {
     pkgs.coreutils
     pkgs.k6
     pkgs.regclient
-    pkgs.poetry
+    # pkgs.poetry
+    (pkgs.poetry.withPlugins (ps: with ps; [ poetry-plugin-shell ]))
 
     pkgs.pnpm
     pkgs.git-lfs
