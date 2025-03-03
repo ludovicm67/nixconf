@@ -131,6 +131,8 @@ in {
 
     pkgs.pnpm
     pkgs.git-lfs
+    pkgs.azure-cli
+    pkgs.gh
 
     stable-pkgs.terraform
     stable-pkgs.awscli2
