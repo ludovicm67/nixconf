@@ -131,7 +131,7 @@ in {
 
     pkgs.pnpm
     pkgs.git-lfs
-    pkgs.azure-cli
+    (pkgs.azure-cli.withExtensions [ pkgs.azure-cli.extensions.account ])
     pkgs.gh
 
     stable-pkgs.terraform
