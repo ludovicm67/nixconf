@@ -134,6 +134,9 @@ in {
     (pkgs.azure-cli.withExtensions [ pkgs.azure-cli.extensions.account ])
     pkgs.gh
 
+    pkgs.dotnet-sdk
+    pkgs.dotnet-aspnetcore
+
     stable-pkgs.terraform
     stable-pkgs.awscli2
     stable-pkgs.tokei
