@@ -135,6 +135,7 @@ in {
       pkgs.azure-cli.extensions.account
       pkgs.azure-cli.extensions.aks-preview
     ])
+    pkgs.kubelogin
     pkgs.gh
 
     pkgs.dotnet-sdk
