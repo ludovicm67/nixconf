@@ -131,7 +131,10 @@ in {
 
     pkgs.pnpm
     pkgs.git-lfs
-    (pkgs.azure-cli.withExtensions [ pkgs.azure-cli.extensions.account ])
+    (pkgs.azure-cli.withExtensions [
+      pkgs.azure-cli.extensions.account
+      pkgs.azure-cli.extensions.aks-preview
+    ])
     pkgs.gh
 
     pkgs.dotnet-sdk
