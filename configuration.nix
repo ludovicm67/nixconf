@@ -3,12 +3,16 @@
 let
   inherit (inputs) nixpkgs nixpkgs-stable fenix;
   inherit (pkgs) system;
-  stable-pkgs = (import nixpkgs-stable {
-    inherit system;
-    config = { allowUnfree = true; };
-  }).pkgs;
+  stable-pkgs =
+    (import nixpkgs-stable {
+      inherit system;
+      config = {
+        allowUnfree = true;
+      };
+    }).pkgs;
 
-in {
+in
+{
   system.stateVersion = 5;
   ids.gids.nixbld = 30000;
   nixpkgs.config.allowUnfree = true;
@@ -18,40 +22,57 @@ in {
   nix = {
     package = pkgs.nix;
     settings = {
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
       keep-outputs = true;
       keep-derivations = true;
       sandbox = false;
       trusted-users = [ "@wheel" ];
-      extra-platforms = [ "aarch64-darwin" "x86_64-darwin" ];
+      extra-platforms = [
+        "aarch64-darwin"
+        "x86_64-darwin"
+      ];
     };
   };
 
   programs.zsh.enable = true;
 
-  users.users.ludovic = { home = "/Users/ludovic"; };
+  users.users.ludovic = {
+    home = "/Users/ludovic";
+  };
   users.users.ludovic.shell = pkgs.zsh;
 
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    sharedModules = [{ home.stateVersion = "24.05"; }];
+    sharedModules = [ { home.stateVersion = "24.05"; } ];
 
-    users.ludovic = { ... }: { imports = [ ./programs ]; };
+    users.ludovic =
+      { ... }:
+      {
+        imports = [ ./programs ];
+      };
   };
 
   nixpkgs.overlays = [
-    (final: prev:
+    (
+      final: prev:
       let
         inherit (prev) config;
         x86Pkgs = import nixpkgs {
           inherit config;
           localSystem = "x86_64-darwin";
         };
-      in if prev.stdenv.system == "aarch64-darwin" then {
-        inherit (x86Pkgs) nix-index;
-      } else
-        { })
+      in
+      if prev.stdenv.system == "aarch64-darwin" then
+        {
+          inherit (x86Pkgs) nix-index;
+        }
+      else
+        { }
+    )
     fenix.overlays.default
   ];
 
@@ -91,7 +112,13 @@ in {
     pkgs.go-jsonnet
     pkgs.nodePackages.ts-node
     pkgs.tree
-    (pkgs.python3.withPackages (ps: with ps; [ pip numpy toolz ]))
+    (pkgs.python3.withPackages (
+      ps: with ps; [
+        pip
+        numpy
+        toolz
+      ]
+    ))
     pkgs.gst_all_1.gstreamer
     pkgs.ffmpeg_4
     pkgs.dsq
@@ -145,5 +172,6 @@ in {
     stable-pkgs.awscli2
     stable-pkgs.tokei
     stable-pkgs.hurl
+    stable-pkgs.nmap
   ];
 }
