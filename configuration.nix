@@ -129,8 +129,8 @@ in
     pkgs.krew
     pkgs.aws-iam-authenticator
     pkgs.kubeseal
-    pkgs.php82
-    pkgs.php82Packages.composer
+    pkgs.php84
+    pkgs.php84Packages.composer
     pkgs.cmctl
     pkgs.trivy
     pkgs.miller
