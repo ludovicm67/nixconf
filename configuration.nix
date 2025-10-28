@@ -102,7 +102,7 @@ in
       "rustc"
       "rustfmt"
     ])
-    pkgs.rust-analyzer-nightly
+    pkgs.rust-analyzer
     pkgs.minio-client
     pkgs.wrk
     pkgs.maven
@@ -148,7 +148,6 @@ in
     pkgs.cachix
     pkgs.helm-docs
     pkgs.k9s
-    pkgs.mkvtoolnix-cli
     pkgs.protobuf
     pkgs.coreutils
     pkgs.k6
@@ -158,20 +157,21 @@ in
 
     pkgs.pnpm
     pkgs.git-lfs
-    (pkgs.azure-cli.withExtensions [
-      pkgs.azure-cli.extensions.account
-      pkgs.azure-cli.extensions.aks-preview
+    (stable-pkgs.azure-cli.withExtensions [
+      stable-pkgs.azure-cli.extensions.account
+      stable-pkgs.azure-cli.extensions.aks-preview
     ])
-    pkgs.kubelogin
+    stable-pkgs.kubelogin
     pkgs.gh
 
-    pkgs.dotnet-sdk
-    pkgs.dotnet-aspnetcore
+    stable-pkgs.dotnet-sdk
+    stable-pkgs.dotnet-aspnetcore
 
     stable-pkgs.terraform
     stable-pkgs.awscli2
     stable-pkgs.tokei
     stable-pkgs.hurl
     stable-pkgs.nmap
+    stable-pkgs.mkvtoolnix-cli
   ];
 }

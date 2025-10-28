@@ -3,9 +3,11 @@
 {
   programs.git = {
     enable = true;
-    userName = "Ludovic Muller";
-    userEmail = "ludovicmuller1@gmail.com";
-    extraConfig = {
+    settings = {
+      user = {
+        name = "Ludovic Muller";
+        email = "ludovicmuller1@gmail.com";
+      };
       init.defaultBranch = "main";
       pull.rebase = true;
       rebase.autoStash = true;
