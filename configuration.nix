@@ -110,7 +110,6 @@ in
     pkgs.cmake
     pkgs.jsonnet-bundler
     pkgs.go-jsonnet
-    pkgs.nodePackages.ts-node
     pkgs.tree
     (pkgs.python3.withPackages (
       ps: with ps; [
