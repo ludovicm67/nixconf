@@ -29,7 +29,10 @@ in
       keep-outputs = true;
       keep-derivations = true;
       sandbox = false;
-      trusted-users = [ "@wheel" ];
+      trusted-users = [
+        "@wheel"
+        "ludovic"
+      ];
       extra-platforms = [
         "aarch64-darwin"
         "x86_64-darwin"
