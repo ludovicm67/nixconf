@@ -2,10 +2,10 @@
 
 let
   inherit (inputs) nixpkgs nixpkgs-stable fenix;
-  inherit (pkgs) system;
+  inherit (pkgs.stdenv.hostPlatform) system;
   stable-pkgs =
     (import nixpkgs-stable {
-      inherit system;
+      system = pkgs.stdenv.hostPlatform.system;
       config = {
         allowUnfree = true;
       };
@@ -66,7 +66,7 @@ in
           localSystem = "x86_64-darwin";
         };
       in
-      if prev.stdenv.system == "aarch64-darwin" then
+      if prev.stdenv.hostPlatform.system == "aarch64-darwin" then
         {
           inherit (x86Pkgs) nix-index;
         }
@@ -80,7 +80,7 @@ in
     pkgs.nixfmt
     pkgs.htop
     pkgs.doctl
-    pkgs.nodejs_22
+    pkgs.nodejs_24
     pkgs.tmux
     pkgs.kubectl
     pkgs.pandoc
@@ -89,7 +89,7 @@ in
     pkgs.fluxcd
     # pkgs.imagemagick6
     pkgs.imagemagick
-    pkgs.postgresql_15
+    pkgs.postgresql_18
     pkgs.kubernetes-helm
     pkgs.yarn
     pkgs.pwgen
@@ -163,8 +163,8 @@ in
     stable-pkgs.kubelogin
     pkgs.gh
 
-    stable-pkgs.dotnet-sdk
-    stable-pkgs.dotnet-aspnetcore
+    # stable-pkgs.dotnet-sdk
+    # stable-pkgs.dotnet-aspnetcore
 
     stable-pkgs.terraform
     stable-pkgs.awscli2

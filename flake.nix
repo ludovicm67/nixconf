@@ -22,19 +22,31 @@
   };
 
   outputs =
-    { nixpkgs, nixpkgs-stable, darwin, home-manager, fenix, self }@inputs: {
+    {
+      nixpkgs,
+      nixpkgs-stable,
+      darwin,
+      home-manager,
+      fenix,
+      self,
+    }@inputs:
+    {
       darwinConfigurations."mbp-de-ludovic" = darwin.lib.darwinSystem {
         inherit inputs;
         system = "aarch64-darwin";
-        modules =
-          [ home-manager.darwinModules.home-manager ./configuration.nix ];
+        modules = [
+          home-manager.darwinModules.home-manager
+          ./configuration.nix
+        ];
       };
 
       darwinConfigurations."MacBook-Pro-de-Ludovic" = darwin.lib.darwinSystem {
         inherit inputs;
         system = "aarch64-darwin";
-        modules =
-          [ home-manager.darwinModules.home-manager ./configuration.nix ];
+        modules = [
+          home-manager.darwinModules.home-manager
+          ./configuration.nix
+        ];
       };
     };
 }
