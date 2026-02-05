@@ -109,7 +109,7 @@ in
     pkgs.minio-client
     pkgs.wrk
     pkgs.maven
-    pkgs.jdk17
+    pkgs.jdk21
     pkgs.cmake
     pkgs.jsonnet-bundler
     pkgs.go-jsonnet
