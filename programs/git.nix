@@ -16,6 +16,7 @@
       signer = "/usr/local/bin/gpg";
       key = "6DE289168B2B031A";
       signByDefault = true;
+      format = "openpgp";
     };
     ignores = [
       ".DS_Store"

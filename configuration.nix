@@ -159,11 +159,11 @@ in
 
     pkgs.pnpm
     pkgs.git-lfs
-    (stable-pkgs.azure-cli.withExtensions [
-      stable-pkgs.azure-cli.extensions.account
-      stable-pkgs.azure-cli.extensions.aks-preview
+    (pkgs.azure-cli.withExtensions [
+      pkgs.azure-cli.extensions.account
+      pkgs.azure-cli.extensions.aks-preview
     ])
-    stable-pkgs.kubelogin
+    pkgs.kubelogin
     pkgs.gh
 
     # stable-pkgs.dotnet-sdk
