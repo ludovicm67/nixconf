@@ -1,6 +1,6 @@
 #/bin/zsh
 
-export PATH="${PATH}:${HOME}/.krew/bin:/opt/homebrew/opt/libxml2/bin"
+export PATH="${PATH}:${HOME}/.local/bin:${HOME}/.krew/bin:/opt/homebrew/opt/libxml2/bin"
 export EDITOR="vim"
 export RPROMPT=""
 
