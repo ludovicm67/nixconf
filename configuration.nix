@@ -35,7 +35,7 @@ in
       ];
       extra-platforms = [
         "aarch64-darwin"
-        "x86_64-darwin"
+        # "x86_64-darwin"
       ];
     };
   };
@@ -59,25 +59,25 @@ in
       };
   };
 
-  nixpkgs.overlays = [
-    (
-      final: prev:
-      let
-        inherit (prev) config;
-        x86Pkgs = import nixpkgs {
-          inherit config;
-          localSystem = "x86_64-darwin";
-        };
-      in
-      if prev.stdenv.hostPlatform.system == "aarch64-darwin" then
-        {
-          inherit (x86Pkgs) nix-index;
-        }
-      else
-        { }
-    )
-    fenix.overlays.default
-  ];
+  # nixpkgs.overlays = [
+  #   (
+  #     final: prev:
+  #     let
+  #       inherit (prev) config;
+  #       x86Pkgs = import nixpkgs {
+  #         inherit config;
+  #         localSystem = "x86_64-darwin";
+  #       };
+  #     in
+  #     if prev.stdenv.hostPlatform.system == "aarch64-darwin" then
+  #       {
+  #         inherit (x86Pkgs) nix-index;
+  #       }
+  #     else
+  #       { }
+  #   )
+  #   fenix.overlays.default
+  # ];
 
   environment.systemPackages = [
     pkgs.nixfmt
@@ -98,13 +98,20 @@ in
     pkgs.pwgen
     pkgs.pv
     pkgs.jq
-    (pkgs.fenix.complete.withComponents [
-      "cargo"
-      "clippy"
-      "rust-src"
-      "rustc"
-      "rustfmt"
-    ])
+
+    # (pkgs.fenix.complete.withComponents [
+    #   "cargo"
+    #   "clippy"
+    #   "rust-src"
+    #   "rustc"
+    #   "rustfmt"
+    # ])
+    pkgs.rustc
+    pkgs.cargo
+    pkgs.rustfmt
+    pkgs.clippy
+    pkgs.rustPlatform.rustLibSrc
+
     pkgs.rust-analyzer
     pkgs.minio-client
     pkgs.wrk
