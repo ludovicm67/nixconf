@@ -50,7 +50,7 @@ in
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    sharedModules = [ { home.stateVersion = "24.05"; } ];
+    sharedModules = [ { home.stateVersion = "25.11"; } ];
 
     users.ludovic =
       { ... }:
