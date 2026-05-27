@@ -50,7 +50,7 @@ in
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    sharedModules = [ { home.stateVersion = "25.11"; } ];
+    sharedModules = [ { home.stateVersion = "26.05"; } ];
 
     users.ludovic =
       { ... }:
@@ -172,6 +172,8 @@ in
     ])
     pkgs.kubelogin
     pkgs.gh
+    pkgs.ghostty-bin
+    pkgs.talosctl
 
     # stable-pkgs.dotnet-sdk
     # stable-pkgs.dotnet-aspnetcore
