@@ -83,7 +83,7 @@ in
     pkgs.nixfmt
     pkgs.htop
     pkgs.doctl
-    pkgs.nodejs_24
+    stable-pkgs.nodejs_24
     pkgs.tmux
     pkgs.kubectl
     pkgs.pandoc

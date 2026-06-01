@@ -70,6 +70,9 @@
 
       # messages
       set -g message-style fg=colour232,bg=colour166,bold
+
+      # Support for multiline links
+      set -ga terminal-features ",*:hyperlinks"
     '';
   };
 }
