@@ -20,6 +20,14 @@
         "tmux"
       ];
     };
+    profileExtra = ''
+      # Added by Toolbox App
+      export PATH="$PATH:/Users/ludovic/Library/Application Support/JetBrains/Toolbox/scripts"
+
+      # Set PATH, MANPATH, etc., for Homebrew.
+      eval "$(/opt/homebrew/bin/brew shellenv)"
+    '';
+
     initContent = ''
       ${builtins.readFile ./zsh-init.zsh}
     '';
