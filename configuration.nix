@@ -98,6 +98,7 @@ in
     pkgs.pwgen
     pkgs.pv
     pkgs.jq
+    pkgs.uv
 
     # (pkgs.fenix.complete.withComponents [
     #   "cargo"
