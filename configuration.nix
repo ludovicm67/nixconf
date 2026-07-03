@@ -179,7 +179,7 @@ in
     # stable-pkgs.dotnet-sdk
     # stable-pkgs.dotnet-aspnetcore
 
-    stable-pkgs.terraform
+    stable-pkgs.opentofu
     stable-pkgs.awscli2
     stable-pkgs.tokei
     stable-pkgs.hurl
