@@ -16,6 +16,17 @@ in
   system.stateVersion = 5;
   ids.gids.nixbld = 30000;
   nixpkgs.config.allowUnfree = true;
+
+  # Workaround: nixpkgs-unstable removed `--toc-depth` from nixos-render-docs,
+  # but current nix-darwin still passes it when building the HTML manual, which
+  # breaks `darwin-manual-html` / `darwin-help`. Two independent paths build that
+  # manual, so both must be disabled until nix-darwin catches up upstream:
+  #   1. the top-level system's own HTML manual (man pages are unaffected), and
+  #   2. the darwin-uninstaller, which embeds its own full darwin system that
+  #      rebuilds the manual with nix-darwin's defaults (ignoring option 1).
+  # Remove both lines once nix-darwin passes `--sidebar-depth` instead.
+  documentation.doc.enable = false;
+  system.tools.darwin-uninstaller.enable = false;
   # Auto upgrade nix package and the daemon service.
   # services.nix-daemon.enable = true;
 
