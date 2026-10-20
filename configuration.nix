@@ -125,7 +125,6 @@ in
     pkgs.rustPlatform.rustLibSrc
 
     pkgs.rust-analyzer
-    pkgs.minio-client
     pkgs.wrk
     pkgs.maven
     pkgs.jdk21
@@ -178,9 +177,13 @@ in
 
     pkgs.pnpm
     pkgs.git-lfs
-    (pkgs.azure-cli.withExtensions [
-      pkgs.azure-cli.extensions.account
-      pkgs.azure-cli.extensions.aks-preview
+    # Workaround: on unstable, azure-cli depends on python `fabric`, which is
+    # marked broken since `invoke` was bumped to v3
+    # (https://github.com/fabric/fabric/issues/2376). Switch back to `pkgs`
+    # once azure-cli evaluates again on unstable.
+    (stable-pkgs.azure-cli.withExtensions [
+      stable-pkgs.azure-cli.extensions.account
+      stable-pkgs.azure-cli.extensions.aks-preview
     ])
     pkgs.kubelogin
     pkgs.gh
