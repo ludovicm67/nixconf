@@ -94,7 +94,7 @@ in
     pkgs.nixfmt
     pkgs.htop
     pkgs.doctl
-    stable-pkgs.nodejs_24
+    pkgs.nodejs_26
     pkgs.tmux
     pkgs.kubectl
     pkgs.pandoc
@@ -127,7 +127,7 @@ in
     pkgs.rust-analyzer
     pkgs.wrk
     pkgs.maven
-    pkgs.jdk21
+    pkgs.jdk25
     pkgs.cmake
     pkgs.jsonnet-bundler
     pkgs.go-jsonnet
@@ -149,8 +149,8 @@ in
     pkgs.krew
     pkgs.aws-iam-authenticator
     pkgs.kubeseal
-    pkgs.php84
-    pkgs.php84Packages.composer
+    pkgs.php86
+    pkgs.php86Packages.composer
     pkgs.cmctl
     pkgs.trivy
     pkgs.miller
