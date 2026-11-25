@@ -184,6 +184,7 @@ in
     (stable-pkgs.azure-cli.withExtensions [
       stable-pkgs.azure-cli.extensions.account
       stable-pkgs.azure-cli.extensions.aks-preview
+      stable-pkgs.azure-cli.extensions.ssh
     ])
     pkgs.kubelogin
     pkgs.gh
